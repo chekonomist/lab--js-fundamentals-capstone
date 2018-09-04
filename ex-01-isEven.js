@@ -6,7 +6,16 @@
  *
 **/
 
+function isEven(someInteger){
+  var isEven = false
+  var reminder = someInteger%2
+  if (reminder===0) {
+    isEven = true
+  }
 
+  console.log(isEven)
+  return isEven
+}
 
 
 

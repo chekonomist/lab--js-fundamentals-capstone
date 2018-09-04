@@ -7,7 +7,22 @@
  *
  */
 
+function toCamelCase(normalSentence){
+  var camelSentence = ""
+  for (var i = 0; i < normalSentence.length; i++) {
 
+    if ( normalSentence[i-1] !== " " && normalSentence[i] !== " " ) {
+      camelSentence += normalSentence[i].toLowerCase()
+    }
+
+    if ( normalSentence[i-1] === " " && normalSentence[i] !== " " ) {
+      camelSentence += normalSentence[i].toUpperCase()
+    }
+  }
+
+  console.log(camelSentence)
+  return camelSentence
+}
 
 
 

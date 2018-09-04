@@ -7,6 +7,15 @@
  *
 **/
 
+function censorBadWords(filthyText){
+  var cleanText = ""
+  var sentenceToWords = filthyText.split(" ")
+  console.log(sentenceToWords)
+
+
+return cleanText
+}
+
 var badWordsList = ['heck', 'darn', 'dang', 'crappy', 'crud', 'crap', 'freaking']
 var badWords2 = ['idiot',  'crap', 'freaking']
 

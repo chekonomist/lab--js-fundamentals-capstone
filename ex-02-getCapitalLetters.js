@@ -6,7 +6,18 @@
  *
 **/
 
+function getCapitalLetters(someText){
+  var allTheCapLetters = []
 
+    for (var i = 0; i < someText.length; i++) {
+      if( someText[i]===someText[i].toUpperCase() && someText[i]!==" "){
+        allTheCapLetters.push(someText[i])
+      }
+    }
+
+  console.log(allTheCapLetters)
+  return allTheCapLetters
+}
 
 
 
