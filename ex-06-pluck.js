@@ -9,6 +9,19 @@
  *
 **/
 
+function pluck(someArray, relevantValue){
+  var resultingArray = []
+
+  for (var i = 0; i < someArray.length; i++) {
+    var elForNewArray = someArray[i][relevantValue]
+    resultingArray.push(elForNewArray)
+  }
+  console.log(resultingArray.join(', '));
+  //i'm not sure the validations are correct. 
+  return resultingArray.join(', ')
+}
+
+
 
 //*~*~*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
 

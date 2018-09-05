@@ -20,7 +20,35 @@
 *
 **/
 
+function encodeURL(someString) {
+  var resultingString = ''
 
+  for (var i = 0; i < someString.length; i++) {
+    if (someString[i] !== ' ' && someString[i] !== '!' && someString[i] !== '"' && someString[i] !== '$' && someString[i] !== '%' && someString[i] !== "'") {
+      resultingString += someString[i]
+    }
+    if (someString[i] === ' ') {
+      resultingString += '%20'
+    }
+    if (someString[i] === '!') {
+      resultingString += '%21'
+    }
+    if (someString[i] === '"') {
+      resultingString += '%22'
+    }
+    if (someString[i] === '$') {
+      resultingString += '%24'
+    }
+    if (someString[i] === '%') {
+      resultingString += '%25'
+    }
+    if (someString[i] === "'") {
+      resultingString += '%27'
+    }
+  }
+  console.log(resultingString);
+  return resultingString
+}
 
 
 

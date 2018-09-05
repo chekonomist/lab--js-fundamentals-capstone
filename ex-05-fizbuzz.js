@@ -8,9 +8,35 @@
  * - for every number that is a multiple of 3 and 5, return "FizZBuzZ"
 **/
 
+function fizzbuzz(someNumber){
+  var numberToString = someNumber.toString()
+  var stringToArray = Array.from(numberToString)
+  var fizzBuzzString = []
 
+  stringToArray.forEach(function(i){
+    if (i%3 !== 0 || i%5 !== 0) {
+       fizzBuzzString.push('.')
+    }
+    if (i%3 === 0 && i%5 !== 0) {
+       fizzBuzzString.push('fizz')
+    }
+    if (i%3 !== 0 && i%5 === 0) {
+       fizzBuzzString.push('buzz')
+    }
+    if (i%3 === 0 && i%5 === 0) {
+      fizzBuzzString.push('FizZBuzZ')
+    }
+    console.log('RESULTADO-------');
+    console.log(fizzBuzzString.join(''));
+    return fizzBuzzString.join('')
+  })
+}
 
-
+// console.log('=====PRUEBAS========');
+// console.log(fizzbuzz(3));
+// function numberToArray(someNumber){
+//   var
+// }
 /**
  * Ex. fizzbuzz(3) === "..fizz"
  *
