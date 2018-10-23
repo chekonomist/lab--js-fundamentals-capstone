@@ -1,38 +1,68 @@
 /**
  * censorBadWords()
  *
- * Write a function called censorBadWords()that returns
+ * Write a function called censorBadWords() that returns
  * It should remove bad words in its input sentence and replace them with ****.
  *
  *
 **/
 
-function censorBadWords(filthyText){
-  var cleanText = ""
+function censorBadWords(censoredWordsArr, filthyTextString){
+  var cleanText = ''
   var sentenceToWords = filthyText.split(" ")
-  console.log(sentenceToWords)
 
-
-return cleanText
+  for (var i = 0; i < sentenceToWords.length; i++) {
+    for (var j = 0; j < censoredWords.length; j++) {
+      if (sentenceToWords[i] === censoredWords[j] ) {
+        cleanText += '**** '
+      }
+      if (sentenceToWords[i] !== censoredWords[j]) {
+        cleanText +=`${sentenceToWords[i]} `
+      }
+    }
+  }
+  console.log('---PRUEBA----');
+  console.log(cleanText);
+  return cleanText
 }
 
-var badWordsList = ['heck', 'darn', 'dang', 'crappy', 'crud', 'crap', 'freaking']
-var badWords2 = ['idiot',  'crap', 'freaking']
+// *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+// *~*~*~*~*~*~*~* Tests (Don't Touch) *~*~*~*~*~*~*~*~*
+// *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
-var censored1 = censorBadWords(badWords, "mom get the heck in here and bring me a darn sandwich"
-var censored2 = censorBadWords(badWords, "here son, your crappy sandwich is on the dang plate")
-var censored3 = censorBadWords(badWords2, "your freaking idiot dog left crap on my floor")
+console.group('ex-03');
+console.log('%cFunction: censorBadWords', 'background-color: green; color: white')
+console.groupEnd();
 
-console.log("[1] Expected: 'mom get the **** in here and bring me a **** sandwich'");
-console.assert( censored1 === "mom get the **** in here and bring me a **** sandwich")
-console.log("=====================================================================");
-console.log();
+/* ----------------------- TEST-1  ----------------------- */
+// Words in 1st string arg that match value from censored list `badWordsList1`
+//  should be reformatted to '****'
+/* ------------------------------------------------------ */
+console.log('TEST-1');
 
-console.log("[2] Expected: 'here son, your **** sandwich is on the **** plate'");
-console.assert( censored2 === "here son, your **** sandwich is on the **** plate")
-console.log("=====================================================================");
-console.log();
+var badWordsList1 = ['heck', 'darn', 'dang', 'crappy', 'crud', 'crap', 'freaking']
 
-console.log("[3] Expected: 'your **** **** dog left **** on my floor'");
-console.assert( censored3 === "your **** **** dog left **** on my floor")
-console.log("=====================================================================");
+var censored_1a = censorBadWords(badWordsList1, "mom get the heck in here and bring me a darn sandwich")
+var censored_1b = censorBadWords(badWordsList1, "here son, your crappy sandwich is on the dang plate")
+
+console.assert( censored_1a === "mom get the **** in here and bring me a **** sandwich")
+console.assert( censored_1b === "here son, your **** sandwich is on the **** plate")
+
+
+/* ----------------------- TEST-2  ----------------------- */
+// Words in 1st string arg that match value from censored list `badWordsList2`
+//  should be reformatted to '****'
+/* ------------------------------------------------------ */
+console.log('TEST-2');
+var badWordsList2 = ['idiot',  'crap', 'freaking']
+
+var censored_2a = censorBadWords(badWordsList2, "your freaking idiot dog left crap on my floor")
+var censored_2b = censorBadWords(badWordsList2, "that idiot Chris talks a lot of freaking crap")
+
+console.assert( censored_2a === "your **** **** dog left **** on my floor")
+console.assert( censored_2b === "that **** Chris talks a lot of **** ****")
+
+
+
+/* ----------------------- END  ----------------------- */
+console.log('\n\n');

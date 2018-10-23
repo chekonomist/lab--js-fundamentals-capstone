@@ -1,7 +1,7 @@
 /**
  * Ex-02: isEven()
  *
- * Write a function called isEvent that takes an integer and returns
+ * Write a function called isEven that takes an integer and returns
  * true or false based on whether that integer is odd or even
  *
 **/

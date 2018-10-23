@@ -1,7 +1,7 @@
 /**
  * Ex-03: getCapitalLetters()
  *
- * Write a function called getCapitalLetters()that returns
+ * Write a function called getCapitalLetters() that returns
  * an array of all of the capital letters of a string
  *
 **/
