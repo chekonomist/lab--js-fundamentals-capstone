@@ -15,7 +15,7 @@ function getCapitalLetters(someText){
       }
     }
 
-  console.log(allTheCapLetters)
+  // console.log(allTheCapLetters)
   return allTheCapLetters
 }
 

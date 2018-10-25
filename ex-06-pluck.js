@@ -17,13 +17,21 @@ function pluck(someArray, relevantValue){
     resultingArray.push(elForNewArray)
   }
   console.log(resultingArray.join(', '));
-  //i'm not sure the validations are correct. 
+  //i'm not sure the validations are correct.
   return resultingArray.join(', ')
 }
 
 
 
 //*~*~*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
+
+// *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+// *~*~*~*~*~*~*~* Tests (Don't Touch) *~*~*~*~*~*~*~*~*
+// *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+
+console.group('ex-05');
+  console.log('%cFunction: pluck', 'background-color: green; color: white')
+console.groupEnd();
 
 var stooges = [
    {name: 'moe', age: 40, hairStyle: "bowl cut" },
@@ -33,51 +41,54 @@ var stooges = [
    {name: 'joe', age: 47, hairStyle: "bald"}
 ]
 
+var productsList = [
+  {name: 'shamwow', grade: 'a'},
+  {name: 'oxyclean', grade: 'b'},
+  {name: 'shlomi', grade: 'a'},
+  {name: 'hearthstone', grade: 'c'},
+]
+
+
+
+/* ----------------------- TEST-1  ----------------------- */
+// Expected Output w/ `stooges` array as 1st argument
+//  and `name` as 2nd argument for `stooges` array
+//  => ['moe', 'larry', 'curly', 'shemp', 'joe']
+/* ------------------------------------------------------ */
+console.log('TEST-1');
 var outputArray_1 = pluck(stooges, 'name')
-var outputArray_2 = pluck(stooges, 'hairStyle')
-var outputArray_3 = pluck(stooges, 'age')
+// => ['moe', 'larry', 'curly', 'shemp', 'joe']
+console.assert( outputArray_1.indexOf('moe') >= 0 )
+console.assert( outputArray_1.indexOf('larry') >= 0 )
+console.assert( outputArray_1.indexOf('shemp') >= 0 )
+console.assert( outputArray_1.indexOf('joe') >= 0 )
 
-console.log("[1] Should return 'moe' in the 1st index");
-console.assert( outputArray_1[0] === 'moe' )
-console.log("===========================================");
-console.log();
 
-console.log("[2] Should return 'larry' in the 2nd index");
-console.assert( outputArray_1[1] === 'larry' )
-console.log("===========================================");
-console.log();
+/* ----------------------- TEST-2  ----------------------- */
+// Expected Output w/ `productsList` array as 1st argument
+/// and `name` as 2nd argument :
+//  => ['shamwow', 'oxyclean', 'shlomi', 'hearthstone']
+/* ------------------------------------------------------ */
 
-console.log("[3] Should return 'shemp' in the 4th index");
-console.assert( outputArray_1[3] === 'shemp' )
-console.log("===========================================");
-console.log();
+console.log('TEST-2');
+var outputArray_2 = pluck(productsList, 'name')
+console.assert( outputArray_2.indexOf('shamwow') >= 0 )
+console.assert( outputArray_2.indexOf('shlomi') >= 0 )
+console.assert( outputArray_2.indexOf('oxyclean') >= 0 )
+console.assert( outputArray_2.indexOf('hearthstone') >= 0 )
 
-console.log("[4] Should return 'bal`' in the 2nd index");
-console.assert( outputArray_2[1] === 'balding' )
-console.log("===========================================");
-console.log();
 
-console.log("[5] Should return 'buzzed' in the 3rd index");
-console.assert( outputArray_2[2] === 'buzzed' )
-console.log("===========================================");
-console.log();
+/* ----------------------- TEST-3  ----------------------- */
+// Expected Output w/  `stooges` array as 1st argument
+//  and `hairStyle` as 2nd argument
+//  => ['bowl cut', 'balding', 'buzzed', 'parted', 'joe']
+/* ------------------------------------------------------ */
+var outputArray_3 = pluck(stooges, 'hairStyle')
+console.assert( outputArray_3.indexOf('bowl cut') >= 0 )
+console.assert( outputArray_3.indexOf('balding') >= 0 )
+console.assert( outputArray_3.indexOf('buzzed') >= 0 )
+console.assert( outputArray_3.indexOf('parted') >= 0 )
 
-console.log("[6] Should return 'parted' in the 4th index");
-console.assert( outputArray_2[3] === 'parted' )
-console.log("===========================================");
-console.log();
-
-console.log("[7] Should return 53 in the 3rd index");
-console.assert( outputArray_3[2] === 53 )
-console.log("===========================================");
-console.log();
-
-console.log("[8] Should return 62 in the 4th index");
-console.assert( outputArray_3[3] === 62 )
-console.log("===========================================");
-console.log();
-
-console.log("[9] Should return 47 in the 5th index");
-console.assert( outputArray_3[4] === 47 )
-console.log("===========================================");
-console.log();
+/* ------------------------------------------------------ */
+/* ----------------------- END  ----------------------- */
+console.log('\n\n');

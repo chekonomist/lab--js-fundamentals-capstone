@@ -9,22 +9,25 @@
 
 function censorBadWords(censoredWordsArr, filthyTextString){
   var cleanText = ''
-  var sentenceToWords = filthyText.split(" ")
+  var filthyStrgSplit = filthyTextString.split(" ")
+  let finalText
 
-  for (var i = 0; i < sentenceToWords.length; i++) {
-    for (var j = 0; j < censoredWords.length; j++) {
-      if (sentenceToWords[i] === censoredWords[j] ) {
-        cleanText += '**** '
-      }
-      if (sentenceToWords[i] !== censoredWords[j]) {
-        cleanText +=`${sentenceToWords[i]} `
+  for (var i = 0; i < filthyStrgSplit.length; i++) {
+    for (var j = 0; j < censoredWordsArr.length; j++) {
+      if (filthyStrgSplit[i] === censoredWordsArr[j] ) {
+        filthyStrgSplit[i] = '****'
       }
     }
+    cleanText = cleanText + `${filthyStrgSplit[i]} `
   }
-  console.log('---PRUEBA----');
-  console.log(cleanText);
-  return cleanText
+  // console.log('---PRUEBA----');
+  // console.log(cleanText);
+  finalText = cleanText.substring(0, cleanText.length-1)
+  return finalText
 }
+
+
+
 
 // *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 // *~*~*~*~*~*~*~* Tests (Don't Touch) *~*~*~*~*~*~*~*~*

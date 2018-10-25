@@ -10,7 +10,10 @@
 
 function getWordCount(someString){
   var objWithWordCount = {}
+  var standardString = someString.toLowerCase()
+  var stringIntoWordsArr = standardString.split(' ')
 
+  console.log(stringIntoWordsArr);
 
 
   return objWithWordCount

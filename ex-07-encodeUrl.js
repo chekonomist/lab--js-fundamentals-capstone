@@ -20,7 +20,7 @@
 *
 **/
 
-function encodeURL(someString) {
+function encodeUrl(someString) {
   var resultingString = ''
 
   for (var i = 0; i < someString.length; i++) {
@@ -52,29 +52,28 @@ function encodeURL(someString) {
 
 
 
-//*~*~*-*~*~*~*~*~ Don't Touch *~*~*~*~*~*~*~*~*~*~*~
+// *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
+// *~*~*~*~*~*~*~* Tests (Don't Touch) *~*~*~*~*~*~*~*~*
+// *~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*
 
+console.group('ex-06');
+  console.log('%cFunction: encodeUrl', 'background-color: green; color: white')
+console.groupEnd();
 
-var encodedURL1 = encodeURL('this is great')
-console.log("[1] Should return 'this%20is%20great'")
+/* ----------------------- TEST-1  ----------------------- */
+// Expected Outputs
+/* ------------------------------------------------------ */
+console.log('TEST-1');
+var encodedURL1 = encodeUrl('this is great')
+var encodedURL2 = encodeUrl('she said "there is no need for violence!"')
+var encodedURL3 = encodeUrl("i'm all about the $")
+var encodedURL4 = encodeUrl("20% of $100")
+
 console.assert(encodedURL1 === 'this%20is%20great')
-console.log("=================================================================================");
-console.log();
-//
-var encodedURL2 = encodeURL('she said "there is no need for violence!"')
-console.log("[2] Should return 'she%20said%20%22there%20is%20no%20need%20for%20violence%21%22'")
 console.assert(encodedURL2 === 'she%20said%20%22there%20is%20no%20need%20for%20violence%21%22')
-console.log("=================================================================================");
-console.log();
-//
-var encodedURL3 = encodeURL("i'm all about the $")
-console.log("[3] Should return 'i%27m%20all%20about%20the%20%24'")
 console.assert(encodedURL3 === "i%27m%20all%20about%20the%20%24")
-console.log("=================================================================================");
-console.log();
+console.assert(encodedURL4 === "20%25%20of%20%24100")
 
-var encodedURL4 = encodeURL("20% of $100")
-console.log("[4] Should return '20%25%20of%20%24100'")
-console.assert(encodedURL3 === "20%25%20of%20%24100")
-console.log("=================================================================================");
-console.log();
+/* ------------------------------------------------------ */
+/* ----------------------- END  ----------------------- */
+console.log('\n\n');
